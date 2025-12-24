@@ -1,4 +1,4 @@
-git+https://github.com/huggingface/transformers.git@v4.57.3
+git+https://github.com/huggingface/transformers.git@v4.51.3
 opencv_python_headless==4.9.0.80
 opencv_python==4.8.0.74
 huggingface_hub
@@ -16,4 +16,5 @@ einops
 gradio
 pillow
 torch
+
 timm
